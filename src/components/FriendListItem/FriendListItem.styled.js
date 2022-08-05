@@ -18,7 +18,7 @@ export const FriendItem = styled.li`
 export const FriendStatus = styled.span`
     width: 20px;
     height: 20px;
-    border: ${p => p.theme.borders.normal};
+    border: ${p => p.theme.borders.none};
     border-radius: ${p => p.theme.radii.round};
     background-color: ${p => p.isOnline ?
         p.theme.colors.online : p.theme.colors.offline};
