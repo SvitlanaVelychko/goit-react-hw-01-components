@@ -1,33 +1,58 @@
 import PropTypes from "prop-types";
+import { Box } from 'components/Box';
+import {
+    ProfileAvatar,
+    ProfileName,
+    ProfileTag,
+    ProfileLocation,
+    ProfileStats,
+    ProfileStatItem,
+    ProfileStatLabel,
+    ProfileStatQuantity
+} from "./Profile.styled";
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
     return (
-        <div class="profile">
-            <div class="description">
-                <img
+        <Box
+            width="400px"
+            mr="auto"
+            ml="auto"
+            border="normal"
+            borderColor="text"
+            borderRadius="normal"
+            boxShadow="0px 4px 24px -1px rgba(0,0,0,0.75)"
+            overflow="hidden"
+        >
+            <Box
+                pt={4}
+                pb={4}
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+            >
+                <ProfileAvatar
                     src={avatar}
                     alt="User avatar"
-                    class="avatar"
                 />
-                <p class="name">{username}</p>
-                <p class="tag">@{tag}</p>
-                <p class="location">{location}</p>
-            </div>
-            <ul class="stats">
-                <li>
-                    <span class="label">Followers</span>
-                    <span class="quantity">{stats.followers}</span>
-                </li>
-                <li>
-                    <span class="label">Views</span>
-                    <span class="quantity">{stats.views}</span>
-                </li>
-                <li>
-                    <span class="label">Likes</span>
-                    <span class="quantity">{stats.likes}</span>
-                </li>
-            </ul>
-        </div>
+                <ProfileName>{username}</ProfileName>
+                <ProfileTag>@{tag}</ProfileTag>
+                <ProfileLocation>{location}</ProfileLocation>
+            </Box>
+            <ProfileStats>
+                <ProfileStatItem>
+                    <ProfileStatLabel class="label">Followers</ProfileStatLabel>
+                    <ProfileStatQuantity class="quantity">{stats.followers}</ProfileStatQuantity>
+                </ProfileStatItem>
+                <ProfileStatItem>
+                    <ProfileStatLabel class="label">Views</ProfileStatLabel>
+                    <ProfileStatQuantity class="quantity">{stats.views}</ProfileStatQuantity>
+                </ProfileStatItem>
+                <ProfileStatItem>
+                    <ProfileStatLabel class="label">Likes</ProfileStatLabel>
+                    <ProfileStatQuantity class="quantity">{stats.likes}</ProfileStatQuantity>
+                </ProfileStatItem>
+            </ProfileStats>
+        </Box>
     );
 }
 

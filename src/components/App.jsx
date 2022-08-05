@@ -6,10 +6,13 @@ import { Profile } from "./Profile/Profile";
 import { Statistics } from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+import { GlobalStyle } from 'components/GlobalStyle';
+import { Box } from 'components/Box';
 
 export const App = () => {
   return (
-    <div>
+    <Box pt="20px" pb="20px">
+      <GlobalStyle />
       <Profile
         username={user.username}
         tag={user.tag}
@@ -18,9 +21,8 @@ export const App = () => {
         stats={user.stats}
       />
       <Statistics title="Upload stats" stats={data} />
-      <Statistics stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </div>
+    </Box>
   );
 };
