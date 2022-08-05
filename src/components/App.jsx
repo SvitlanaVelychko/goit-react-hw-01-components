@@ -11,7 +11,7 @@ import { Box } from 'components/Box';
 
 export const App = () => {
   return (
-    <Box pt="20px" pb="20px">
+    <Box pt={5} pb={5}>
       <GlobalStyle />
       <Profile
         username={user.username}
